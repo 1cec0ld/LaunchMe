@@ -20,10 +20,10 @@ public class PlayerListener implements Listener
 {
 	@EventHandler
 	public void onPlayerMove(PlayerMoveEvent e)
-	{
-		if(e.getFrom().getBlock().equals(e.getTo().getBlock())) return;
-		
+	{		
 		Player p = e.getPlayer();
+		
+		if(LaunchMe.active.contains(p)) return;
 		
 		Block b = p.getLocation().getBlock().getRelative(0, -2, 0);
 		
@@ -33,9 +33,9 @@ public class PlayerListener implements Listener
 			
 			String[] lines = s.getLines();
 			
-			if(TransportManager.hasType(lines[0].substring(1, lines[0].length() - 1)))
+			if(TransportManager.hasType(lines[0]))
 			{
-				TransportType type = TransportManager.getType(lines[0].substring(1, lines[0].length() - 1));
+				TransportType type = TransportManager.getType(lines[0]);
 				
 				if(!p.hasPermission("launchme." + type.getName().toLowerCase() +".use"))
 				{
@@ -53,7 +53,7 @@ public class PlayerListener implements Listener
 	{
 		if (e.getReason().startsWith("You moved too") || e.getReason().startsWith("Flying is not"))
 		{
-			if (LaunchMe.launched.contains(e.getPlayer()))
+			if (LaunchMe.active.contains(e.getPlayer()))
 			{
 				e.setCancelled(true);
 			}
@@ -71,10 +71,10 @@ public class PlayerListener implements Listener
 			
 			if(e.getCause().equals(DamageCause.FALL))
 			{
-				if(LaunchMe.launched.contains(p))
+				if(LaunchMe.active.contains(p))
 				{
 					e.setCancelled(true);
-					LaunchMe.launched.remove(p);
+					LaunchMe.active.remove(p);
 				}
 			}
 		}

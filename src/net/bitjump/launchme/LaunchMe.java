@@ -30,7 +30,7 @@ public class LaunchMe extends JavaPlugin {
 	public static String version;
 	public static String author;
 
-	public static Set<Player> launched = new HashSet<Player>();
+	public static Set<Player> active = new HashSet<Player>();
 	
 	public PlayerListener playerListener;
 	public SignListener signListener;

@@ -52,7 +52,7 @@ public class Cannon extends BasicTransport
 			
 			p.sendMessage(ChatColor.GREEN + "Whoosh!");
 			p.getWorld().createExplosion(p.getLocation(), 0);
-			LaunchMe.launched.add(p);
+			LaunchMe.active.add(p);
 			
 			final Player pl = p;
 			final int nyan = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(LaunchMe.instance, new Runnable()
