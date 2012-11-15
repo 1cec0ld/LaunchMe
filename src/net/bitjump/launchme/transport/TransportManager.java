@@ -10,7 +10,7 @@ public class TransportManager
 	
 	public static void addType(TransportType transport)
 	{
-		transports.put(transport.getName(), transport);
+		transports.put(transport.getName().toLowerCase(), transport);
 	}
 	
 	public static boolean hasType(String s)

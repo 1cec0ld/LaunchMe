@@ -27,6 +27,6 @@ public class LocaleManager
 	
 	public static String get(String s)
 	{
-		return ChatColor.GOLD + "[" + ChatColor.DARK_PURPLE + "LaunchMe" + ChatColor.GOLD +"]" + localeFile.getString(s).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");		
+		return ChatColor.GOLD + "[" + ChatColor.DARK_PURPLE + "LaunchMe" + ChatColor.GOLD +"] " + localeFile.getString(s).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");		
 	}
 }
