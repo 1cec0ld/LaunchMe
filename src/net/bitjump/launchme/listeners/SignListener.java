@@ -17,9 +17,9 @@ public class SignListener implements Listener {
 		Player p = e.getPlayer();
 		String[] lines = e.getLines();
 		
-		if (TransportManager.hasType(lines[0].substring(1, lines[0].length() - 1)))
+		if (TransportManager.hasType(lines[0].toLowerCase().substring(1, lines[0].length() - 1)))
 		{
-			TransportType type = TransportManager.getType(lines[0].substring(1, lines[0].length() - 1));
+			TransportType type = TransportManager.getType(lines[0].toLowerCase().substring(1, lines[0].length() - 1));
 			
 			if(!p.hasPermission("launchme." + type.getName().toLowerCase() + ".create"))
 			{

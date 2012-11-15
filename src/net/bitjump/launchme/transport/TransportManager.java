@@ -15,14 +15,14 @@ public class TransportManager
 	
 	public static boolean hasType(String s)
 	{
-		if(transports.containsKey(s)) 
+		if(transports.containsKey(s.toLowerCase())) 
 			return true;
 		return false;
 	}
 	
 	public static TransportType getType(String s)
 	{
-		return transports.get(s);
+		return transports.get(s.toLowerCase());
 	}
 
 }
