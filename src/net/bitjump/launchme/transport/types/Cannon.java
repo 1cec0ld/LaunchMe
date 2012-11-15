@@ -35,7 +35,7 @@ public class Cannon extends BasicTransport
 		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.cannon.deactivate"))
 		{
 		
-			final Location end = new Location(Bukkit.getWorld(lines[3]), Double.parseDouble(coords[0]), Double.parseDouble(coords[1]), Double.parseDouble(coords[2]));
+			final Location end = new Location(Bukkit.getWorld(lines[3]), Double.parseDouble(coords[0]), 800, Double.parseDouble(coords[1]));
 			
 			if (Bukkit.getServer().getPluginManager().getPlugin("Vault") != null)
 			{
