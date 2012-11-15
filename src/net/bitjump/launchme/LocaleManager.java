@@ -19,7 +19,7 @@ public class LocaleManager
 		if(!locale.exists())
 		{
 		    locale.getParentFile().mkdirs();
-		    FileUtils.copy(LaunchMe.instance.getResource("locale_GB.yml"), locale);
+		    FileUtils.copy(LaunchMe.instance.getResource("/locale/locale_EN.yml"), locale);
 		}
 		
 		localeFile = YamlConfiguration.loadConfiguration(locale);
