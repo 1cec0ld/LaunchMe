@@ -53,6 +53,8 @@ public class LaunchMe extends JavaPlugin {
 
 		OMBLogger.info("Plugin initializing...");
 
+		instance = this;
+		
 		ConfigManager.setupConfig();
 		LocaleManager.setupLocale();
 		setupEconomy();
