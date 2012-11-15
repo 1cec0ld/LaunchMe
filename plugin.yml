@@ -1,0 +1,32 @@
+name: LaunchMe
+main: net.bitjump.launchme.LaunchMe
+version: 2.0.1
+softdepend: [Vault]
+author: Spudstabber
+permissions:
+    launchme.*:
+        description: Gives access to all launchme areas.
+        children:
+            launchme.cannon: true
+            launchme.launch: true
+            launchme.land: true
+            launchme.teleporter: true
+            launchme.teleport: true
+    launchme.cannon.create:
+        description: Allows you to create [cannon] signs.
+        default: false
+    launchme.land.create:
+        description: Allows you to create [land] signs.
+        default: false
+    launchme.land.use:
+        description: Allows you to use landing pads.
+        default: true
+    launchme.cannon.use:
+        description: Fires you from a cannon!
+        default: true
+    launchme.teleporter.create:
+        description: Allows you to create [teleporter] signs.
+        default: false
+    launchme.teleporter.use:
+        description: Teleports you!
+        default: true

@@ -1,0 +1,13 @@
+# Specifies the active locale_XX.yml file, stored in plugins/LaunchMe/locale.
+locale: "EN"
+transports:
+    cannon:
+        # Block that will deactivate a cannon.
+        deactivate: 42
+        # Is transport enabled?
+        enabled: true
+    teleporter:
+        # Block that will deactivate a teleporter.
+        deactivate: 42
+        # Is transport enabled?
+        enabled: true

@@ -1,0 +1,28 @@
+sign:
+    # Used if coordinates on signs are wrong.
+    badcoords: "Check your coordinates, are you sure they're numbers?"
+    # Used if price isn't valid.
+    badprice: "Check your price - is it a valid number?"
+    # Used if world doesn't exist.
+    badworld: "Check your worldname - does it exist?"
+cannon:
+    # Used if player lacks the launchme.cannon.create perm.
+    nopermission: "You do not have permission to create cannons!"
+    # Used if player lacks the launchme.cannon.use perm.
+    nouse: "You do not have permission to launch!"
+    # Used on successful cannon creation.
+    success: "Cannon creation successful!"
+teleporter:
+    # Used if player lacks the launchme.teleporter.use perm.
+    nopermission: "You do not have permission to create teleporters!"
+    # Used if player lacks the launchme.teleporter.create perm.
+    noteleport: "You do not have permission to teleport!"
+    # Used on successful teleporter creation.
+    success: "Teleporter creation successful!"
+econ:
+    # Used if player lacks funds.
+    nofunds: "Not enough money to use this transport!"
+    # Used to notify player about withdrawl, %money% is replaced with the amount withdrawn.
+    withdraw: "$%money% withdrawn from your account!"
+
+
