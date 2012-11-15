@@ -33,6 +33,7 @@ public class LaunchMe extends JavaPlugin {
 	public static Set<Player> launched = new HashSet<Player>();
 	
 	public PlayerListener playerListener;
+	public SignListener signListener;
 
 	public void onDisable()
 	{
@@ -64,8 +65,10 @@ public class LaunchMe extends JavaPlugin {
 		OMBLogger.info("Registering events...");
 
 		playerListener = new PlayerListener();
+		signListener = new SignListener();
 		
 		this.getServer().getPluginManager().registerEvents(playerListener, this);
+		this.getServer().getPluginManager().registerEvents(signListener, this);
 		
 		OMBLogger.info(name + " version " + version + " enabled!");
 		
