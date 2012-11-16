@@ -39,15 +39,22 @@ public class Cannon extends BasicTransport
 			
 			if (Bukkit.getServer().getPluginManager().getPlugin("Vault") != null)
 			{
-				Double price = Double.parseDouble(lines[2]);
-				if(!LaunchMe.economy.has(p.getName(), price))
+				try
 				{
-					p.sendMessage(LocaleManager.get("econ.nofunds"));
-					return;
+					Double price = Double.parseDouble(lines[2]);
+					if(!LaunchMe.economy.has(p.getName(), price))
+					{
+						p.sendMessage(LocaleManager.get("econ.nofunds"));
+						return;
+					}
+						
+					LaunchMe.economy.withdrawPlayer(p.getName(), price);
+					p.sendMessage(LocaleManager.get("econ.withdraw").replaceAll("%money%", price + "0"));
 				}
+				catch(Exception e)
+				{
 					
-				LaunchMe.economy.withdrawPlayer(p.getName(), price);
-				p.sendMessage(LocaleManager.get("econ.withdraw").replaceAll("%money%", price + "0"));
+				}
 			}
 			
 			p.sendMessage(ChatColor.GREEN + "Whoosh!");
