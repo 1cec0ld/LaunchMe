@@ -23,7 +23,7 @@ land:
     # Used if player lacks the launchme.land.create perm.
     nopermission: "You do not have permission to create landing pads!"
     # Used on successful pad creation.
-    success: "Langing pad creation successful!"
+    success: "Landing pad creation successful!"
 econ:
     # Used if player lacks funds.
     nofunds: "Not enough money to use this transport!"
