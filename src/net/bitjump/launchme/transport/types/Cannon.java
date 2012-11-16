@@ -13,7 +13,6 @@ import org.bukkit.util.Vector;
 
 public class Cannon extends BasicTransport 
 {
-
 	@Override
 	public String getSecondLine() 
 	{

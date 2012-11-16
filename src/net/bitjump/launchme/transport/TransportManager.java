@@ -3,7 +3,6 @@ package net.bitjump.launchme.transport;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class TransportManager 
 {
 	private static final Map<String, TransportType> transports = new HashMap<String, TransportType>();

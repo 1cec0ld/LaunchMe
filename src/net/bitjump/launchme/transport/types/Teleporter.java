@@ -12,7 +12,6 @@ import org.bukkit.entity.Player;
 
 public class Teleporter extends BasicTransport 
 {
-
 	@Override
 	public String getSecondLine() 
 	{

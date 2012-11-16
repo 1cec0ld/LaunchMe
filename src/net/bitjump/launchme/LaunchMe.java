@@ -16,8 +16,8 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class LaunchMe extends JavaPlugin {
-	
+public class LaunchMe extends JavaPlugin 
+{	
 	public final Logger logger = Logger.getLogger("Minecraft");
 	
 	public static JavaPlugin instance;
@@ -61,6 +61,8 @@ public class LaunchMe extends JavaPlugin {
 		setupEconomy();
 		
 		setupTypes();
+		
+		logger.setFilter(new KickFilter());
 		
 		OMBLogger.info("Registering events...");
 
