@@ -75,6 +75,28 @@ public class PlayerListener implements Listener
 				{
 					e.setCancelled(true);
 					LaunchMe.active.remove(p);
+					return;
+				}
+			}
+			
+			Block b = p.getLocation().getBlock().getRelative(0, -2, 0);
+			
+			if(b.getState() instanceof Sign)
+			{
+				Sign s = (Sign) b.getState();
+				
+				String[] lines = s.getLines();
+				
+				if(lines[0].equalsIgnoreCase("[land]"))
+				{
+					TransportType type = TransportManager.getType("land");
+					
+					if(!p.hasPermission("launchme." + type.getName().toLowerCase() +".use"))
+					{
+						return;
+					}
+					
+					e.setCancelled(true);
 				}
 			}
 		}

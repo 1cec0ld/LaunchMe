@@ -10,6 +10,7 @@ import net.bitjump.launchme.transport.types.*;
 import net.bitjump.launchme.utils.OMBLogger;
 import net.milkbowl.vault.economy.Economy;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -31,6 +32,7 @@ public class LaunchMe extends JavaPlugin
 	public static String author;
 
 	public static Set<Player> active = new HashSet<Player>();
+	public static boolean econ = false;
 	
 	public PlayerListener playerListener;
 	public SignListener signListener;
@@ -58,7 +60,11 @@ public class LaunchMe extends JavaPlugin
 		
 		ConfigManager.setupConfig();
 		LocaleManager.setupLocale();
-		setupEconomy();
+		
+		if(Bukkit.getServer().getPluginManager().getPlugin("Vault") != null)
+		{
+			econ = setupEconomy();
+		}
 		
 		setupTypes();
 		
@@ -81,6 +87,7 @@ public class LaunchMe extends JavaPlugin
 	{
 		if(config.getBoolean("transports.cannon.enabled")) TransportManager.addType(new Cannon());
 		if(config.getBoolean("transports.teleporter.enabled")) TransportManager.addType(new Teleporter());
+		if(config.getBoolean("transports.land.enabled")) TransportManager.addType(new Land());
 	}
 
 	private Boolean setupEconomy()
@@ -90,6 +97,7 @@ public class LaunchMe extends JavaPlugin
 		{
 			economy = economyProvider.getProvider();
 		}
+		
 		return (economy != null);
 	}
 

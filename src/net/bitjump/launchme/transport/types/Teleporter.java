@@ -34,7 +34,7 @@ public class Teleporter extends BasicTransport
 		{
 			final Location end = new Location(Bukkit.getWorld(lines[3]), Double.parseDouble(coords[0]), Double.parseDouble(coords[1]), Double.parseDouble(coords[2]));
 		
-			if (Bukkit.getServer().getPluginManager().getPlugin("Vault") != null)
+			if(LaunchMe.econ)
 			{
 				try
 				{
