@@ -11,3 +11,6 @@ transports:
         deactivate: 42
         # Is transport enabled?
         enabled: true
+    land:
+        # Is transport enabled?
+        enabled: true
