@@ -68,7 +68,7 @@ public class LaunchMe extends JavaPlugin
 		
 		setupTypes();
 		
-		// logger.setFilter(new KickFilter());
+		logger.setFilter(new KickFilter());
 		
 		OMBLogger.info("Registering events...");
 

@@ -6,6 +6,7 @@ import net.bitjump.launchme.transport.BasicTransport;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
@@ -57,6 +58,7 @@ public class Cannon extends BasicTransport
 			
 			p.sendMessage(ChatColor.GREEN + "Whoosh!");
 			p.getWorld().createExplosion(p.getLocation(), 0);
+			
 			LaunchMe.active.add(p);
 			
 			final Player pl = p;
@@ -73,6 +75,10 @@ public class Cannon extends BasicTransport
 				public void run()
 				{
 					pl.teleport(end);
+					if(pl.getGameMode().equals(GameMode.CREATIVE))
+					{
+						LaunchMe.active.remove(pl);
+					}
 					Bukkit.getServer().getScheduler().cancelTask(nyan);
 				}
 			}, 100); 
