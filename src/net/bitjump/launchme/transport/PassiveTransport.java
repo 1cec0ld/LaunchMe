@@ -1,6 +1,6 @@
 package net.bitjump.launchme.transport;
 
-public abstract class PassiveTransport implements TransportType
+public abstract class PassiveTransport extends TransportType
 {	
 	private final String name = getClass().getSimpleName();
 	

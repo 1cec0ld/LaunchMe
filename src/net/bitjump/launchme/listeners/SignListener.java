@@ -50,7 +50,7 @@ public class SignListener implements Listener
 			}
 			
 			p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".success"));
-
+			type.created++;
 		}
 	}
 

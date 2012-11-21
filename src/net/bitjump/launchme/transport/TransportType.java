@@ -3,16 +3,20 @@ package net.bitjump.launchme.transport;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 
-public interface TransportType 
+public abstract class TransportType 
 {
-	public String getName();
-	public String getSecondLine();
-	public String getThirdLine();
-	public String getFourthLine();
+	public int uses = 0; 
+	public int created = 0;
 	
-	public boolean matchSecondLine(String s);
-	public boolean matchThirdLine(String s);
-	public boolean matchFourthLine(String s);
+	public abstract String getName();
+	public abstract String getSecondLine();
+	public abstract String getThirdLine();
+	public abstract String getFourthLine();
 	
-	public void activateTransport(Player p, Sign s);
+	public abstract boolean matchSecondLine(String s);
+	public abstract boolean matchThirdLine(String s);
+	public abstract boolean matchFourthLine(String s);
+	
+	public abstract void activateTransport(Player p, Sign s);
+
 }

@@ -8,13 +8,11 @@ public class KickFilter implements Filter
 	@Override
 	public boolean isLoggable(LogRecord arg0) 
 	{
-		boolean isLoggable = true;
-		if(arg0.getMessage().endsWith("floating too long!"));
+		if(arg0.getMessage().contains("floating too long!"))
 		{
-			isLoggable = false;
+			return false;
 		}
 		
-		return isLoggable;
+		return true;
 	}
-
 }
