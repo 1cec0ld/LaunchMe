@@ -1,5 +1,6 @@
 package net.bitjump.launchme;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -26,6 +27,7 @@ public class LaunchMe extends JavaPlugin
 	
 	public static FileConfiguration config;
 	public static PluginDescriptionFile pdf;
+	public static Metrics metrics;
 	
 	public static String name;
 	public static String version;
@@ -81,6 +83,76 @@ public class LaunchMe extends JavaPlugin
 		OMBLogger.info(name + " version " + version + " enabled!");
 		
 		instance = this;
+		
+		try 
+		{
+			metrics = new Metrics(this);
+		    metrics.start();
+		} 
+		catch (IOException e) 
+		{
+		    // Failed to submit the stats :-(
+		}
+		
+		instance = this;
+		
+		Metrics.Graph g = metrics.createGraph("Transport Usage");
+		
+		g.addPlotter(new Metrics.Plotter("Cannon Uses") 
+		{			
+			@Override
+			public int getValue() 
+			{
+				return TransportManager.getType("cannon").uses;
+			}
+		});
+		
+		g.addPlotter(new Metrics.Plotter("Teleporter Uses") 
+		{	
+			@Override
+			public int getValue() 
+			{
+				return TransportManager.getType("teleporter").uses;
+			}
+		});
+		
+		g.addPlotter(new Metrics.Plotter("Landing Pad Uses") 
+		{			
+			@Override
+			public int getValue() 
+			{
+				return TransportManager.getType("land").uses;
+			}
+		});
+		
+		Metrics.Graph g2 = metrics.createGraph("Transport Creation");
+		
+		g2.addPlotter(new Metrics.Plotter("Cannons Created") 
+		{	
+			@Override
+			public int getValue() 
+			{
+				return TransportManager.getType("cannon").created;
+			}
+		});
+		
+		g2.addPlotter(new Metrics.Plotter("Teleporters Created") 
+		{			
+			@Override
+			public int getValue() 
+			{
+				return TransportManager.getType("teleporter").created;
+			}
+		});
+		
+		g2.addPlotter(new Metrics.Plotter("Landing Pads Created") 
+		{			
+			@Override
+			public int getValue() 
+			{
+				return TransportManager.getType("land").created;
+			}
+		});
 	}
 	
 	public void setupTypes()

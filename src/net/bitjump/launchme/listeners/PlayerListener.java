@@ -44,6 +44,7 @@ public class PlayerListener implements Listener
 				}
 				
 				type.activateTransport(p, s);
+				type.uses++;
 			}
 		}
 	}
@@ -97,6 +98,7 @@ public class PlayerListener implements Listener
 					}
 					
 					e.setCancelled(true);
+					type.uses++;
 				}
 			}
 		}

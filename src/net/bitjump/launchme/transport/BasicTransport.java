@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import org.bukkit.Bukkit;
 
-public abstract class BasicTransport implements TransportType
+public abstract class BasicTransport extends TransportType
 {	
 	private final String name = getClass().getSimpleName();
 	
