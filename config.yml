@@ -6,6 +6,10 @@ transports:
         deactivate: 42
         # Is transport enabled?
         enabled: true
+        # Height the cannons deposit you at to fall from.
+        height: 600
+        #how far below the cannon block should the sign be?
+        depth: -2
     teleporter:
         # Block that will deactivate a teleporter.
         deactivate: 42

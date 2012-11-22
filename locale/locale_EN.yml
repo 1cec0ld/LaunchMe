@@ -12,6 +12,8 @@ cannon:
     nouse: "You do not have permission to launch!"
     # Used on successful cannon creation.
     success: "Cannon creation successful!"
+    # Text to display at launch
+    launchtxt: "Woosh!"
 teleporter:
     # Used if player lacks the launchme.teleporter.use perm.
     nopermission: "You do not have permission to create teleporters!"
