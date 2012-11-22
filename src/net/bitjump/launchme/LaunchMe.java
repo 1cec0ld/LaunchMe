@@ -125,7 +125,7 @@ public class LaunchMe extends JavaPlugin
 			}
 		});
 		
-		Metrics.Graph g2 = metrics.createGraph("Transport Creation");
+		/*Metrics.Graph g2 = metrics.createGraph("Transport Creation");
 		
 		g2.addPlotter(new Metrics.Plotter("Cannons Created") 
 		{	
@@ -152,7 +152,7 @@ public class LaunchMe extends JavaPlugin
 			{
 				return TransportManager.getType("land").created;
 			}
-		});
+		}); */
 	}
 	
 	public void setupTypes()

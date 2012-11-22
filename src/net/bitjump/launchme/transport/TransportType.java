@@ -5,10 +5,11 @@ import org.bukkit.entity.Player;
 
 public abstract class TransportType 
 {
+	private final String name = getClass().getSimpleName();
+	
 	public int uses = 0; 
 	public int created = 0;
 	
-	public abstract String getName();
 	public abstract String getSecondLine();
 	public abstract String getThirdLine();
 	public abstract String getFourthLine();
@@ -18,5 +19,10 @@ public abstract class TransportType
 	public abstract boolean matchFourthLine(String s);
 	
 	public abstract void activateTransport(Player p, Sign s);
+	
+	public String getName()
+	{
+		return name;
+	}
 
 }
