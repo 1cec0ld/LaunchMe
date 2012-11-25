@@ -56,7 +56,8 @@ public class Cannon extends BasicTransport
 				}
 			}
 			
-			p.sendMessage(ChatColor.GREEN + "Whoosh!");
+			//p.sendMessage(ChatColor.GREEN + "Whoosh!");
+			p.sendMessage(ChatColor.GREEN + LocaleManager.get("cannon.launch"));
 			p.getWorld().createExplosion(p.getLocation(), 0);
 			
 			LaunchMe.active.add(p);
