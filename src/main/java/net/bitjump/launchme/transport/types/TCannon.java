@@ -13,7 +13,7 @@ import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-public class TargetedCannon extends TargetedTransport
+public class TCannon extends TargetedTransport
 {
 	@Override
 	public String getThirdLine() 
