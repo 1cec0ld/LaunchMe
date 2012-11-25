@@ -125,6 +125,8 @@ public class LaunchMe extends JavaPlugin
 			}
 		});
 		
+		metrics.addGraph(g);
+		
 		/*Metrics.Graph g2 = metrics.createGraph("Transport Creation");
 		
 		g2.addPlotter(new Metrics.Plotter("Cannons Created") 
