@@ -25,8 +25,8 @@ public class PlayerListener implements Listener
 		
 		if(LaunchMe.active.contains(p)) return;
 		
-		int i = (LaunchMe.config.getInt("transports.cannon.depth"))-1;
-		Block b = p.getLocation().getBlock().getRelative(0, i, 0);
+		int i = (LaunchMe.config.getInt("depth"));
+		Block b = p.getLocation().getBlock().getRelative(0, -i - 1, 0);
 		
 		if(b.getState() instanceof Sign)
 		{

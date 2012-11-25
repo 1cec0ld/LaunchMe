@@ -13,7 +13,7 @@ cannon:
     # Used on successful cannon creation.
     success: "Cannon creation successful!"
     # Text to display at launch
-    launchtxt: "Woosh!"
+    launch: "Whoosh!"
 teleporter:
     # Used if player lacks the launchme.teleporter.use perm.
     nopermission: "You do not have permission to create teleporters!"
