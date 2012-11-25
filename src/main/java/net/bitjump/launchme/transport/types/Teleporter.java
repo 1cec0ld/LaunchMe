@@ -54,7 +54,8 @@ public class Teleporter extends BasicTransport
 				}
 			}
 			
-			p.sendMessage(ChatColor.GREEN + "Whoomp!");
+			// p.sendMessage(ChatColor.GREEN + "Whoomp!");
+			p.sendMessage(ChatColor.GREEN + LocaleManager.get("teleporter.use"));
 			p.teleport(end);
 		}
 	}

@@ -1,12 +1,20 @@
 package net.bitjump.launchme.transport;
 
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.bukkit.Location;
+
 public abstract class TargetedTransport extends TransportType
-{	
-	public abstract String getSecondLine();
+{		
 	public abstract String getThirdLine();
+	
+	@Override
+	public String getSecondLine()
+	{
+		return "";
+	}
 	
 	@Override
 	public String getFourthLine()
@@ -17,7 +25,13 @@ public abstract class TargetedTransport extends TransportType
 	@Override
 	public boolean matchSecondLine(String s)
 	{
-		Pattern p = Pattern.compile(getSecondLine());
+		return true;
+	}
+	
+	@Override
+	public boolean matchThirdLine(String s)
+	{
+		Pattern p = Pattern.compile(getThirdLine());
 		Matcher m = p.matcher(s);
 		
 		if(m.find())
@@ -29,15 +43,8 @@ public abstract class TargetedTransport extends TransportType
 	}
 	
 	@Override
-	public boolean matchThirdLine(String s)
-	{
-		return true;
-	}
-	
-	@Override
 	public boolean matchFourthLine(String s)
 	{
 		return true;
 	}
-
 }

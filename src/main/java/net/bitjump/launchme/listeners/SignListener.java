@@ -4,6 +4,7 @@ import net.bitjump.launchme.LocaleManager;
 import net.bitjump.launchme.transport.TransportManager;
 import net.bitjump.launchme.transport.TransportType;
 
+import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -50,6 +51,7 @@ public class SignListener implements Listener
 			}
 			
 			p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".success"));
+			type.onCreate(p, (Sign) e.getBlock().getState());
 			// type.created++;
 		}
 	}

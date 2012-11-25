@@ -1,6 +1,6 @@
 sign:
-    # Used if coordinates on signs are wrong.
-    badcoords: "Check your coordinates, are you sure they're numbers?"
+    # Used if coordinates/target on signs are wrong.
+    badcoords: "Check your targeting, are you sure it's correct?"
     # Used if price isn't valid.
     badprice: "Check your price - is it a valid number?"
     # Used if world doesn't exist.
@@ -13,7 +13,7 @@ cannon:
     # Used on successful cannon creation.
     success: "Cannon creation successful!"
     # Text to display at launch
-    launch: "Whoosh!"
+    use: "Whoosh!"
 teleporter:
     # Used if player lacks the launchme.teleporter.use perm.
     nopermission: "You do not have permission to create teleporters!"
@@ -21,6 +21,8 @@ teleporter:
     noteleport: "You do not have permission to teleport!"
     # Used on successful teleporter creation.
     success: "Teleporter creation successful!"
+    # Text to display on use
+    use: "Whoomp!"
 land:
     # Used if player lacks the launchme.land.create perm.
     nopermission: "You do not have permission to create landing pads!"

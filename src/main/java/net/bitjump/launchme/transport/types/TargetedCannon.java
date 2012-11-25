@@ -2,7 +2,8 @@ package net.bitjump.launchme.transport.types;
 
 import net.bitjump.launchme.LaunchMe;
 import net.bitjump.launchme.LocaleManager;
-import net.bitjump.launchme.transport.BasicTransport;
+import net.bitjump.launchme.TargetManager;
+import net.bitjump.launchme.transport.TargetedTransport;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,29 +13,23 @@ import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-public class Cannon extends BasicTransport 
+public class TargetedCannon extends TargetedTransport
 {
-	@Override
-	public String getSecondLine() 
-	{
-		return "^\\s*-?[0-9]+(?:\\.[0-9]*)?,\\s*-?[0-9]+(?:\\.[0-9]*)?\\s*$";
-	}
-
 	@Override
 	public String getThirdLine() 
 	{
 		return "^\\s*[0-9]+(?:\\.[0-9]*)?\\s*$";
 	}
-
+	
 	@Override
 	public void activateTransport(Player p, Sign s)
 	{
 		String[] lines = s.getLines();
-		String[] coords = lines[1].split(",");
 		
 		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.cannon.deactivate"))
 		{
-			final Location end = new Location(Bukkit.getWorld(lines[3]), Double.parseDouble(coords[0]), LaunchMe.config.getInt("transports.cannon.height", 600), Double.parseDouble(coords[1]));
+			final Location end = TargetManager.get(lines[1]);
+			end.setY(LaunchMe.config.getInt("transport.cannon.height", 600));
 			
 			if(LaunchMe.econ)
 			{
@@ -57,7 +52,7 @@ public class Cannon extends BasicTransport
 			}
 			
 			//p.sendMessage(ChatColor.GREEN + "Whoosh!");
-			p.sendMessage(ChatColor.GREEN + LocaleManager.get("cannon.use"));
+			p.sendMessage(ChatColor.GREEN + LocaleManager.get("cannon.launch"));
 			p.getWorld().createExplosion(p.getLocation(), 0);
 			
 			LaunchMe.active.add(p);

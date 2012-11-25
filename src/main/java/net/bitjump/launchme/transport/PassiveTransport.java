@@ -2,8 +2,6 @@ package net.bitjump.launchme.transport;
 
 public abstract class PassiveTransport extends TransportType
 {	
-	private final String name = getClass().getSimpleName();
-	
 	@Override
 	public String getSecondLine()
 	{
@@ -20,12 +18,6 @@ public abstract class PassiveTransport extends TransportType
 	public String getFourthLine()
 	{
 		return "";
-	}
-	
-	@Override
-	public String getName()
-	{
-		return name;
 	}
 	
 	@Override
