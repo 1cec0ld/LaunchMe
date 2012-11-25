@@ -96,7 +96,7 @@ public class LaunchMe extends JavaPlugin
 		
 		instance = this;
 		
-		Metrics.Graph g = metrics.createGraph("Transport Usage");
+		/*Metrics.Graph g = metrics.createGraph("Transport Usage");
 		
 		g.addPlotter(new Metrics.Plotter("Cannon Uses") 
 		{			
@@ -125,7 +125,7 @@ public class LaunchMe extends JavaPlugin
 			}
 		});
 
-		/*Metrics.Graph g2 = metrics.createGraph("Transport Creation");
+		Metrics.Graph g2 = metrics.createGraph("Transport Creation");
 		
 		g2.addPlotter(new Metrics.Plotter("Cannons Created") 
 		{	
