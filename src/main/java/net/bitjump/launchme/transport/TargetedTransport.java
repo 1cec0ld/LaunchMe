@@ -1,10 +1,7 @@
 package net.bitjump.launchme.transport;
 
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.bukkit.Location;
 
 public abstract class TargetedTransport extends TransportType
 {		

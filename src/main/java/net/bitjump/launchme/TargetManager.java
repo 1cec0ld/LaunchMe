@@ -31,5 +31,10 @@ public class TargetManager
 		return new Location(Bukkit.getWorld(ss[0]), Double.parseDouble(ss[1]), Double.parseDouble(ss[2]), Double.parseDouble(ss[3]));
 	}
 	
+	public static void remove(String s)
+	{
+		targetFile.set(s, null);
+	}
+	
 	
 }
