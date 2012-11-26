@@ -16,10 +16,12 @@ public class BlockListener implements Listener
 		{
 			Sign s = (Sign) e.getBlock().getState();
 			
+			String[] lines = s.getLines();
+			
 			String ss = "";
 			try
 			{
-				ss = s.getLine(0).substring(1, s.getLine(0).length() - 1);
+				ss = lines[0].toLowerCase().substring(1, lines[0].length() - 1);
 			}
 			catch(StringIndexOutOfBoundsException ex)
 			{
@@ -28,7 +30,7 @@ public class BlockListener implements Listener
 			
 			if(ss.equals("target"))
 			{
-				TargetManager.remove(s.getLine(1));
+				TargetManager.remove(lines[1]);
 			}
 		}
 	}

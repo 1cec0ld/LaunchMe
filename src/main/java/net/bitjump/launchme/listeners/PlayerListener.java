@@ -34,9 +34,19 @@ public class PlayerListener implements Listener
 			
 			String[] lines = s.getLines();
 			
-			if(TransportManager.hasType(lines[0].toLowerCase().substring(1, lines[0].length() - 1)))
+			String ss = "";
+			try
 			{
-				TransportType type = TransportManager.getType(lines[0].toLowerCase().substring(1, lines[0].length() - 1));
+				ss = lines[0].toLowerCase().substring(1,lines[0].length() - 1);
+			}
+			catch(StringIndexOutOfBoundsException ex)
+			{
+				return;
+			}
+			
+			if(TransportManager.hasType(ss))
+			{
+				TransportType type = TransportManager.getType(ss);
 				
 				if(!p.hasPermission("launchme." + type.getName().toLowerCase() +".use"))
 				{
