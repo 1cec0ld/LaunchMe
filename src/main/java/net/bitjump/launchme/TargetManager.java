@@ -13,7 +13,7 @@ public class TargetManager
 	
 	public static void setupTargets()
 	{		
-		File locale = new File("targets.yml");
+		File locale = new File(LaunchMe.instance.getDataFolder(), "targets.yml");
 		
 		targetFile = YamlConfiguration.loadConfiguration(locale);
 	}

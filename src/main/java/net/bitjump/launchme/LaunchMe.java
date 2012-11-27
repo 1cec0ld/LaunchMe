@@ -62,6 +62,7 @@ public class LaunchMe extends JavaPlugin
 		
 		ConfigManager.setupConfig();
 		LocaleManager.setupLocale();
+		TargetManager.setupTargets();
 		
 		if(Bukkit.getServer().getPluginManager().getPlugin("Vault") != null)
 		{
