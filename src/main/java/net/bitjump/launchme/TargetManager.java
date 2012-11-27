@@ -11,11 +11,10 @@ import org.bukkit.configuration.file.YamlConfiguration;
 public class TargetManager 
 {
 	private static FileConfiguration targetFile;
+	private static File locale = new File(LaunchMe.instance.getDataFolder(), "targets.yml");
 	
 	public static void setupTargets()
-	{		
-		File locale = new File(LaunchMe.instance.getDataFolder(), "targets.yml");
-		
+	{				
 		targetFile = YamlConfiguration.loadConfiguration(locale);
 		
 		try 
@@ -32,6 +31,15 @@ public class TargetManager
 	{
 		String loc = l.getWorld().getName() + "," +  Double.toString(l.getX() + 0.5) + "," + Double.toString(l.getY()) + "," + Double.toString(l.getZ() + 0.5);
 		targetFile.set("targets." + s, loc);
+		
+		try 
+		{
+			targetFile.save(locale);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	public static Location get(String s)

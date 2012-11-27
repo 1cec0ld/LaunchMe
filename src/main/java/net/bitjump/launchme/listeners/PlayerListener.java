@@ -48,7 +48,7 @@ public class PlayerListener implements Listener
 			{
 				TransportType type = TransportManager.getType(ss);
 				
-				if(type.isPassive()) return;
+				if(type.isPassive() == true) return;
 				
 				if(!p.hasPermission("launchme." + type.getName().toLowerCase() +".use"))
 				{
