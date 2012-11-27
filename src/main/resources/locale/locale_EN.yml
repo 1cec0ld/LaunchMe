@@ -14,6 +14,15 @@ cannon:
     success: "Cannon creation successful!"
     # Text to display at launch
     use: "Whoosh!"
+tcannon:
+    # Used if player lacks the launchme.tcannon.create perm.
+    nopermission: "You do not have permission to create targeted cannons!"
+    # Used if player lacks the launchme.tcannon.use perm.
+    nouse: "You do not have permission to launch!"
+    # Used on successful targetedcannon creation.
+    success: "Targeted Cannon creation successful!"
+    # Text to display at launch
+    use: "Whoosh!"    
 teleporter:
     # Used if player lacks the launchme.teleporter.use perm.
     nopermission: "You do not have permission to create teleporters!"
@@ -28,6 +37,11 @@ land:
     nopermission: "You do not have permission to create landing pads!"
     # Used on successful pad creation.
     success: "Landing pad creation successful!"
+target:
+    # Used if player lacks the launchme.target.create perm.
+    nopermission: "You do not have permission to create targets!"
+    # Used on successful target creation.
+    success: "Target creation successful!"
 econ:
     # Used if player lacks funds.
     nofunds: "Not enough money to use this transport!"

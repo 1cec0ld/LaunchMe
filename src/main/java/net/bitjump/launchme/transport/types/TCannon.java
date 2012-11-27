@@ -52,7 +52,7 @@ public class TCannon extends TargetedTransport
 			}
 			
 			//p.sendMessage(ChatColor.GREEN + "Whoosh!");
-			p.sendMessage(ChatColor.GREEN + LocaleManager.get("cannon.launch"));
+			p.sendMessage(ChatColor.GREEN + LocaleManager.get("tcannon.use"));
 			p.getWorld().createExplosion(p.getLocation(), 0);
 			
 			LaunchMe.active.add(p);
