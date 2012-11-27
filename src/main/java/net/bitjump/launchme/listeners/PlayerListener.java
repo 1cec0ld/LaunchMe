@@ -48,6 +48,8 @@ public class PlayerListener implements Listener
 			{
 				TransportType type = TransportManager.getType(ss);
 				
+				if(type.isPassive()) return;
+				
 				if(!p.hasPermission("launchme." + type.getName().toLowerCase() +".use"))
 				{
 					p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".nouse", "You cannot use this transport!"));

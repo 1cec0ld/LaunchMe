@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 public abstract class TransportType 
 {
 	private final String name = getClass().getSimpleName();
+	private boolean passive = false;
 	
 	public int uses = 0; 
 	public int created = 0;
@@ -23,6 +24,11 @@ public abstract class TransportType
 	public String getName()
 	{
 		return name;
+	}
+	
+	public boolean isPassive()
+	{
+		return passive;
 	}
 	
 	public void onCreate(Player p, Sign s, String[] lines)
