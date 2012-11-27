@@ -2,8 +2,10 @@ package net.bitjump.launchme.transport;
 
 public abstract class PassiveTransport extends TransportType
 {	
-	public boolean passive = true;
-	
+	public PassiveTransport()
+	{
+		this.passive = true;
+	}
 	@Override
 	public String getSecondLine()
 	{
