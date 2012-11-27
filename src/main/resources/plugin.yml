@@ -1,6 +1,6 @@
 name: LaunchMe
 main: net.bitjump.launchme.LaunchMe
-version: 2.2.1
+version: 2.2.2
 softdepend: [Vault]
 author: Spudstabber
 permissions:
