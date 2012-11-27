@@ -30,7 +30,7 @@ public class TargetManager
 	
 	public static void add(String s, Location l)
 	{
-		String loc = l.getWorld().getName() + "," +  Double.toString(l.getX()) + "," + Double.toString(l.getY()) + "," + Double.toString(l.getZ());
+		String loc = l.getWorld().getName() + "," +  Double.toString(l.getX() + 0.5) + "," + Double.toString(l.getY()) + "," + Double.toString(l.getZ() + 0.5);
 		targetFile.set("targets." + s, loc);
 	}
 	
