@@ -61,7 +61,7 @@ public class SignListener implements Listener
 			}
 			
 			p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".success"));
-			type.onCreate(p, (Sign) e.getBlock().getState());
+			type.onCreate(p, (Sign) e.getBlock().getState(), lines);
 			// type.created++;
 		}
 	}

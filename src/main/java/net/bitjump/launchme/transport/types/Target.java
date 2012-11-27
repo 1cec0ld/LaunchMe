@@ -15,10 +15,9 @@ public class Target extends PassiveTransport
 	}
 	
 	@Override
-	public void onCreate(Player p, Sign s)
+	public void onCreate(Player p, Sign s, String[] lines)
 	{
-		TargetManager.add(s.getLine(1), s.getLocation());
-		created++;
+		TargetManager.add(lines[1], s.getLocation());
 	}
 	
 }

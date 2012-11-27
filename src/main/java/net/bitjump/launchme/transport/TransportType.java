@@ -25,7 +25,7 @@ public abstract class TransportType
 		return name;
 	}
 	
-	public void onCreate(Player p, Sign s)
+	public void onCreate(Player p, Sign s, String[] lines)
 	{
 		created++;
 	}
