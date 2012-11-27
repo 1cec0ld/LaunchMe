@@ -32,7 +32,7 @@ public class Cannon extends BasicTransport
 		String[] lines = s.getLines();
 		String[] coords = lines[1].split(",");
 		
-		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.cannon.deactivate"))
+		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.cannon.deactivate", 42))
 		{
 			final Location end = new Location(Bukkit.getWorld(lines[3]), Double.parseDouble(coords[0]), LaunchMe.config.getInt("transports.cannon.height", 600), Double.parseDouble(coords[1]));
 			

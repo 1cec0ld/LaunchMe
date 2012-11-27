@@ -158,10 +158,10 @@ public class LaunchMe extends JavaPlugin
 	
 	public void setupTypes()
 	{
-		if(config.getBoolean("transports.cannon.enabled")) TransportManager.addType(new Cannon());
-		if(config.getBoolean("transports.teleporter.enabled")) TransportManager.addType(new Teleporter());
-		if(config.getBoolean("transports.land.enabled")) TransportManager.addType(new Land());
-		if(config.getBoolean("transports.target.enabled")) 
+		if(config.getBoolean("transports.cannon.enabled", true)) TransportManager.addType(new Cannon());
+		if(config.getBoolean("transports.teleporter.enabled", true)) TransportManager.addType(new Teleporter());
+		if(config.getBoolean("transports.land.enabled", true)) TransportManager.addType(new Land());
+		if(config.getBoolean("transports.target.enabled", true)) 
 		{
 			TransportManager.addType(new Target());
 			TransportManager.addType(new TCannon());

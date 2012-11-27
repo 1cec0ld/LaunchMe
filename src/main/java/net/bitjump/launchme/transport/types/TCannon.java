@@ -26,7 +26,7 @@ public class TCannon extends TargetedTransport
 	{
 		String[] lines = s.getLines();
 		
-		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.cannon.deactivate"))
+		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.cannon.deactivate", 42))
 		{
 			final Location end = TargetManager.get(lines[1]);
 			end.setY(LaunchMe.config.getInt("transport.cannon.height", 600));

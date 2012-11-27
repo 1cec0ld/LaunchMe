@@ -14,7 +14,7 @@ public class LocaleManager
 	
 	public static void setupLocale()
 	{		
-		File locale = new File(LaunchMe.instance.getDataFolder(), "locale/locale_" + LaunchMe.config.getString("locale") + ".yml");
+		File locale = new File(LaunchMe.instance.getDataFolder(), "locale/locale_" + LaunchMe.config.getString("locale", "EN") + ".yml");
 		
 		if(!locale.exists())
 		{
