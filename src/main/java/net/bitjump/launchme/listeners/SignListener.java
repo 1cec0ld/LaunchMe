@@ -34,33 +34,33 @@ public class SignListener implements Listener
 			
 			if(!p.hasPermission("launchme." + type.getName().toLowerCase() + ".create"))
 			{
-				p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".nopermission"));
+				p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".nopermission", "You do not have permission to create this transport!"));
 				e.setCancelled(true);
 				return;
 			}
 			
 			if(!type.matchSecondLine(lines[1]))
 			{
-				p.sendMessage(LocaleManager.get("sign.badcoords"));
+				p.sendMessage(LocaleManager.get("sign.badcoords", "Check your targeting, are you sure it's correct?"));
 				e.setCancelled(true);
 				return;
 			}
 			
 			if(!type.matchThirdLine(lines[2]))
 			{
-				p.sendMessage(LocaleManager.get("sign.badprice"));
+				p.sendMessage(LocaleManager.get("sign.badprice", "Check your price - is it a valid number?"));
 				e.setCancelled(true);
 				return;
 			}
 			
 			if(!type.matchFourthLine(lines[3]))
 			{
-				p.sendMessage(LocaleManager.get("sign.badworld"));
+				p.sendMessage(LocaleManager.get("sign.badworld", "Check your worldname - does it exist?"));
 				e.setCancelled(true);
 				return;
 			}
 			
-			p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".success"));
+			p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".success", "Transport creation successful!"));
 			type.onCreate(p, (Sign) e.getBlock().getState(), lines);
 			// type.created++;
 		}

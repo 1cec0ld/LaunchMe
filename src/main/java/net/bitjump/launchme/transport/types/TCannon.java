@@ -38,12 +38,12 @@ public class TCannon extends TargetedTransport
 					Double price = Double.parseDouble(lines[2]);
 					if(!LaunchMe.economy.has(p.getName(), price))
 					{
-						p.sendMessage(LocaleManager.get("econ.nofunds"));
+						p.sendMessage(LocaleManager.get("econ.nofunds", "Not enough money to use this transport!"));
 						return;
 					}
 						
 					LaunchMe.economy.withdrawPlayer(p.getName(), price);
-					p.sendMessage(LocaleManager.get("econ.withdraw").replaceAll("%money%", price + "0"));
+					p.sendMessage(LocaleManager.get("econ.withdraw", "$%money% withdrawn from your account!").replaceAll("%money%", price + "0"));
 				}
 				catch(Exception e)
 				{
@@ -52,7 +52,7 @@ public class TCannon extends TargetedTransport
 			}
 			
 			//p.sendMessage(ChatColor.GREEN + "Whoosh!");
-			p.sendMessage(ChatColor.GREEN + LocaleManager.get("tcannon.use"));
+			p.sendMessage(ChatColor.GREEN + LocaleManager.get("tcannon.use", "Whoosh!"));
 			p.getWorld().createExplosion(p.getLocation(), 0);
 			
 			LaunchMe.active.add(p);

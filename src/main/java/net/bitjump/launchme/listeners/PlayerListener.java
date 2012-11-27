@@ -50,7 +50,7 @@ public class PlayerListener implements Listener
 				
 				if(!p.hasPermission("launchme." + type.getName().toLowerCase() +".use"))
 				{
-					p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".nouse"));
+					p.sendMessage(LocaleManager.get(type.getName().toLowerCase() + ".nouse", "You cannot use this transport!"));
 					return;
 				}
 				

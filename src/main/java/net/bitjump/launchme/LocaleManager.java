@@ -25,8 +25,8 @@ public class LocaleManager
 		localeFile = YamlConfiguration.loadConfiguration(locale);
 	}
 	
-	public static String get(String s)
+	public static String get(String s, String def)
 	{
-		return ChatColor.GOLD + "[" + ChatColor.DARK_PURPLE + "LaunchMe" + ChatColor.GOLD +"] " + localeFile.getString(s).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");		
+		return ChatColor.GOLD + "[" + ChatColor.DARK_PURPLE + "LaunchMe" + ChatColor.GOLD +"] " + localeFile.getString(s, def).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");		
 	}
 }
