@@ -165,6 +165,7 @@ public class LaunchMe extends JavaPlugin
 		{
 			TransportManager.addType(new Target());
 			TransportManager.addType(new TCannon());
+			TransportManager.addType(new TTeleporter());
 		}
 	}
 
