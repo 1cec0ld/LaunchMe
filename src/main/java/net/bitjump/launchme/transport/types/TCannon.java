@@ -28,8 +28,19 @@ public class TCannon extends TargetedTransport
 		
 		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.cannon.deactivate", 42))
 		{
-			final Location end = TargetManager.get(lines[1]);
-			end.setY(LaunchMe.config.getInt("transport.cannon.height", 600));
+			Location en = null;
+			try
+			{
+				en = TargetManager.get(lines[1]);
+				en.setY(LaunchMe.config.getInt("transport.cannon.height", 600));
+			}
+			catch(NullPointerException e)
+			{
+				p.sendMessage(LocaleManager.get("tcannon.targetmissing", "This cannon has no known target!"));
+				return;
+			}
+			
+			final Location end = en;
 			
 			if(LaunchMe.econ)
 			{

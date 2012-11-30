@@ -26,8 +26,19 @@ public class TTeleporter extends TargetedTransport
 		
 		if(p.getLocation().getBlock().getRelative(0, -1, 0).getTypeId() != LaunchMe.config.getInt("transports.teleporter.deactivate", 42))
 		{
-			final Location end = TargetManager.get(lines[1]);
-			end.setY(end.getY() + 2);
+			Location en = null;
+			try
+			{
+				en = TargetManager.get(lines[1]);
+				en.setY(en.getY() + 2);
+			}
+			catch(NullPointerException e)
+			{
+				p.sendMessage(LocaleManager.get("tteleporter.targetmissing", "This teleporter has no known target!"));
+				return;
+			}
+			
+			final Location end = en;
 		
 			if(LaunchMe.econ)
 			{
