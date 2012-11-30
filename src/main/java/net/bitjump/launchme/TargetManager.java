@@ -17,14 +17,7 @@ public class TargetManager
 	{				
 		targetFile = YamlConfiguration.loadConfiguration(locale);
 		
-		try 
-		{
-			targetFile.save(locale);
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
+		save();
 	}
 	
 	public static void add(String s, Location l)
@@ -32,14 +25,7 @@ public class TargetManager
 		String loc = l.getWorld().getName() + "," +  Double.toString(l.getX() + 0.5) + "," + Double.toString(l.getY()) + "," + Double.toString(l.getZ() + 0.5);
 		targetFile.set("targets." + s, loc);
 		
-		try 
-		{
-			targetFile.save(locale);
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
+		save();
 	}
 	
 	public static Location get(String s)
@@ -52,7 +38,19 @@ public class TargetManager
 	public static void remove(String s)
 	{
 		targetFile.set("targets." + s, null);
+		
+		save();
 	}
 	
-	
+	public static void save()
+	{
+		try 
+		{
+			targetFile.save(locale);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+	}
 }
