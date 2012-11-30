@@ -35,6 +35,7 @@ public class LaunchMe extends JavaPlugin
 
 	public static Set<Player> active = new HashSet<Player>();
 	public static boolean econ = false;
+	public static boolean spout = false;
 	
 	public PlayerListener playerListener;
 	public SignListener signListener;
@@ -68,6 +69,11 @@ public class LaunchMe extends JavaPlugin
 		if(Bukkit.getServer().getPluginManager().getPlugin("Vault") != null)
 		{
 			econ = setupEconomy();
+		}
+		
+		if(Bukkit.getServer().getPluginManager().getPlugin("Spout") != null)
+		{
+			spout = true;
 		}
 		
 		setupTypes();
