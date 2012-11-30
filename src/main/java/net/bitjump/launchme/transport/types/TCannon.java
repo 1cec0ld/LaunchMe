@@ -73,7 +73,14 @@ public class TCannon extends TargetedTransport
 			{
 				public void run()
 				{
-					pl.setVelocity(new Vector(0, 10, 0));
+					if(LaunchMe.spout)
+					{
+						pl.setVelocity(new Vector(0, 5, 0));
+					}
+					else
+					{
+						pl.setVelocity(new Vector(0, 10, 0));
+					}
 				}
 			}, 5, 5);
 	
