@@ -1,6 +1,7 @@
 package net.bitjump.launchme.listeners;
 
 import net.bitjump.launchme.TargetManager;
+import net.bitjump.launchme.utils.OMBLogger;
 
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
@@ -31,6 +32,7 @@ public class BlockListener implements Listener
 			if(ss.equals("target"))
 			{
 				TargetManager.remove(lines[1]);
+				OMBLogger.info("Removed target " + lines[1]);
 			}
 		}
 	}

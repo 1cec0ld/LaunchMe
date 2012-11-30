@@ -38,6 +38,7 @@ public class LaunchMe extends JavaPlugin
 	
 	public PlayerListener playerListener;
 	public SignListener signListener;
+	public BlockListener blockListener;
 
 	public void onDisable()
 	{
@@ -77,9 +78,11 @@ public class LaunchMe extends JavaPlugin
 
 		playerListener = new PlayerListener();
 		signListener = new SignListener();
+		blockListener = new BlockListener();
 		
 		this.getServer().getPluginManager().registerEvents(playerListener, this);
 		this.getServer().getPluginManager().registerEvents(signListener, this);
+		this.getServer().getPluginManager().registerEvents(blockListener, this);
 		
 		OMBLogger.info(name + " version " + version + " enabled!");
 		
