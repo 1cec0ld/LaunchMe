@@ -20,7 +20,7 @@ tcannon:
     # Used if player lacks the launchme.tcannon.use perm.
     nouse: "You do not have permission to launch!"
     # Used on successful targetedcannon creation.
-    success: "Targeted Cannon creation successful!"
+    success: "Targeted cannon creation successful!"
     # Text to display at launch
     use: "Whoosh!"    
 teleporter:
@@ -30,6 +30,15 @@ teleporter:
     noteleport: "You do not have permission to teleport!"
     # Used on successful teleporter creation.
     success: "Teleporter creation successful!"
+    # Text to display on use
+    use: "Whoomp!"
+tteleporter:
+    # Used if player lacks the launchme.tteleporter.use perm.
+    nopermission: "You do not have permission to create targeted teleporters!"
+    # Used if player lacks the launchme.tteleporter.create perm.
+    noteleport: "You do not have permission to teleport!"
+    # Used on successful teleporter creation.
+    success: "Targeted teleporter creation successful!"
     # Text to display on use
     use: "Whoomp!"
 land:
