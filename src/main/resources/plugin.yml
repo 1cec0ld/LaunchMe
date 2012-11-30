@@ -16,6 +16,8 @@ permissions:
             launchme.target.create: true
             launchme.tcannon.create: true
             launchme.tcannon.use: true
+            launchme.tteleporter.create: true
+            launchme.tteleporter.use: true
         default: op
     launchme.cannon.create:
         description: Allows you to create [cannon] signs.
@@ -43,4 +45,10 @@ permissions:
         default: false
     launchme.tcannon.use:
         description: Allows you to use targeted cannons.
+        default: true
+    launchme.tteleporter.create:
+        description: Allows you to create [tteleporter] signs.
+        default: false
+    launchme.tteleporter.use:
+        description: Allows you to use targeted teleporters.
         default: true
