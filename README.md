@@ -24,6 +24,18 @@ Permissions
  - Allows for landing pad creation.
 * launchme.land.use
  - Allows for landing pad use.
+* launchme.land.create
+ - Allows for landing pad creation.
+* launchme.land.use
+ - Allows for landing pad use.
+* launchme.tcannon.create
+ - Allows for targeted cannon creation.
+* launchme.tcannon.use
+ - Allows for targeted cannon use.
+* launchme.tteleporter.create
+ - Allows for targeted teleporter creation.
+* launchme.tteleporter.use
+ - Allows for targeted teleporter use.
 
 Developers
 -----------
