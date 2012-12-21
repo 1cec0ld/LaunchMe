@@ -1,8 +1,13 @@
 name: LaunchMe
 main: net.bitjump.launchme.LaunchMe
-version: 2.3.1
+version: 2.4.1
 softdepend: [Vault]
 author: Spudstabber
+commands:
+    launchme:
+        description: The LaunchMe master command.
+        usage: /<command> [subcommand]
+        aliases: [lm]
 permissions:
     launchme.*:
         description: Gives access to all launchme areas.
@@ -18,6 +23,7 @@ permissions:
             launchme.tcannon.use: true
             launchme.tteleporter.create: true
             launchme.tteleporter.use: true
+            launchme.version: true
         default: op
     launchme.cannon.create:
         description: Allows you to create [cannon] signs.
@@ -51,4 +57,7 @@ permissions:
         default: false
     launchme.tteleporter.use:
         description: Allows you to use targeted teleporters.
+        default: true
+    launchme.version:
+        description: Allows you to check LaunchMe version.
         default: true
