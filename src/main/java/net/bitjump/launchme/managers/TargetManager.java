@@ -1,7 +1,9 @@
-package net.bitjump.launchme;
+package net.bitjump.launchme.managers;
 
 import java.io.File;
 import java.io.IOException;
+
+import net.bitjump.launchme.LaunchMe;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -22,7 +24,7 @@ public class TargetManager
 	
 	public static void add(String s, Location l)
 	{
-		String loc = l.getWorld().getName() + "," +  Double.toString(l.getX() + 0.5) + "," + Double.toString(l.getY()) + "," + Double.toString(l.getZ() + 0.5);
+		String loc = l.getWorld().getName() + "," +  Double.toString(l.getX()) + "," + Double.toString(l.getY()) + "," + Double.toString(l.getZ());
 		targetFile.set("targets." + s, loc);
 		
 		save();
@@ -53,4 +55,5 @@ public class TargetManager
 			e.printStackTrace();
 		}
 	}
+	
 }

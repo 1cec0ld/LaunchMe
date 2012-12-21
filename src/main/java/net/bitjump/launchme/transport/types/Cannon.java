@@ -1,7 +1,7 @@
 package net.bitjump.launchme.transport.types;
 
 import net.bitjump.launchme.LaunchMe;
-import net.bitjump.launchme.LocaleManager;
+import net.bitjump.launchme.managers.LocaleManager;
 import net.bitjump.launchme.transport.BasicTransport;
 
 import org.bukkit.Bukkit;

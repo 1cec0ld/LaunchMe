@@ -1,11 +1,14 @@
 package net.bitjump.launchme;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import net.bitjump.launchme.commands.*;
 import net.bitjump.launchme.listeners.*;
+import net.bitjump.launchme.managers.*;
 import net.bitjump.launchme.transport.TransportManager;
 import net.bitjump.launchme.transport.types.*;
 import net.bitjump.launchme.utils.OMBLogger;
@@ -43,14 +46,14 @@ public class LaunchMe extends JavaPlugin
 
 	public void onDisable()
 	{
-		pdf = this.getDescription();
+		pdf = getDescription();
 		OMBLogger.info(pdf.getName() + " version " + pdf.getVersion() + "is now disabled!");
-		this.getServer().getScheduler().cancelAllTasks();
+		getServer().getScheduler().cancelAllTasks();
 	}
 
 	public void onEnable()
 	{
-		pdf = this.getDescription();
+		pdf = getDescription();
 
 		name = pdf.getName();
 		version = pdf.getVersion();
@@ -78,6 +81,8 @@ public class LaunchMe extends JavaPlugin
 		
 		setupTypes();
 		
+		setupCommands();
+		
 		logger.setFilter(new KickFilter());
 		
 		OMBLogger.info("Registering events...");
@@ -86,9 +91,9 @@ public class LaunchMe extends JavaPlugin
 		signListener = new SignListener();
 		blockListener = new BlockListener();
 		
-		this.getServer().getPluginManager().registerEvents(playerListener, this);
-		this.getServer().getPluginManager().registerEvents(signListener, this);
-		this.getServer().getPluginManager().registerEvents(blockListener, this);
+		getServer().getPluginManager().registerEvents(playerListener, this);
+		getServer().getPluginManager().registerEvents(signListener, this);
+		getServer().getPluginManager().registerEvents(blockListener, this);
 		
 		OMBLogger.info(name + " version " + version + " enabled!");
 		
@@ -165,7 +170,7 @@ public class LaunchMe extends JavaPlugin
 		}); */
 	}
 	
-	public void setupTypes()
+	private void setupTypes()
 	{
 		if(config.getBoolean("transports.cannon.enabled", true)) TransportManager.addType(new Cannon());
 		if(config.getBoolean("transports.teleporter.enabled", true)) TransportManager.addType(new Teleporter());
@@ -176,6 +181,13 @@ public class LaunchMe extends JavaPlugin
 			TransportManager.addType(new TCannon());
 			TransportManager.addType(new TTeleporter());
 		}
+	}
+	
+	private void setupCommands()
+	{
+		getCommand("launchme").setExecutor(new CommandManager());
+		
+		CommandManager.addComand(Arrays.asList("version"), new VersionCommand());
 	}
 
 	private Boolean setupEconomy()

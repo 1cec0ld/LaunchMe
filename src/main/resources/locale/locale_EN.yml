@@ -56,5 +56,9 @@ econ:
     nofunds: "Not enough money to use this transport!"
     # Used to notify player about withdrawl, %money% is replaced with the amount withdrawn.
     withdraw: "$%money% withdrawn from your account!"
-
-
+commands:
+    # Used if player does not have a command permission.
+    nopermission: "You do not have permission to perform this command!"
+    # Used if player enters invalid command.
+    nocommand: "This command does not exist!"
+    

@@ -1,8 +1,8 @@
 package net.bitjump.launchme.transport.types;
 
 import net.bitjump.launchme.LaunchMe;
-import net.bitjump.launchme.LocaleManager;
-import net.bitjump.launchme.TargetManager;
+import net.bitjump.launchme.managers.LocaleManager;
+import net.bitjump.launchme.managers.TargetManager;
 import net.bitjump.launchme.transport.TargetedTransport;
 
 import org.bukkit.ChatColor;

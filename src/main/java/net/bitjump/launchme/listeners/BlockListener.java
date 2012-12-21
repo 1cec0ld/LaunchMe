@@ -1,6 +1,6 @@
 package net.bitjump.launchme.listeners;
 
-import net.bitjump.launchme.TargetManager;
+import net.bitjump.launchme.managers.TargetManager;
 import net.bitjump.launchme.utils.OMBLogger;
 
 import org.bukkit.block.Sign;

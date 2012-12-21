@@ -1,6 +1,6 @@
 package net.bitjump.launchme.listeners;
 
-import net.bitjump.launchme.LocaleManager;
+import net.bitjump.launchme.managers.LocaleManager;
 import net.bitjump.launchme.transport.TransportManager;
 import net.bitjump.launchme.transport.TransportType;
 

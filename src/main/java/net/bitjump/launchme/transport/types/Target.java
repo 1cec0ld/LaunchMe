@@ -1,6 +1,6 @@
 package net.bitjump.launchme.transport.types;
 
-import net.bitjump.launchme.TargetManager;
+import net.bitjump.launchme.managers.TargetManager;
 import net.bitjump.launchme.transport.PassiveTransport;
 
 import org.bukkit.block.Sign;
@@ -17,7 +17,7 @@ public class Target extends PassiveTransport
 	@Override
 	public void onCreate(Player p, Sign s, String[] lines)
 	{
-		TargetManager.add(lines[1], s.getLocation());
+		TargetManager.add(lines[1], s.getLocation().add(0.5, 2.0, 0.5));
 	}
 	
 }

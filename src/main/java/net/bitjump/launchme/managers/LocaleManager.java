@@ -1,10 +1,11 @@
-package net.bitjump.launchme;
+package net.bitjump.launchme.managers;
 
 import java.io.File;
 
+import net.bitjump.launchme.LaunchMe;
 import net.bitjump.launchme.utils.FileUtils;
+import net.bitjump.launchme.utils.MessageUtils;
 
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -27,6 +28,7 @@ public class LocaleManager
 	
 	public static String get(String s, String def)
 	{
-		return ChatColor.GOLD + "[" + ChatColor.DARK_PURPLE + "LaunchMe" + ChatColor.GOLD +"] " + localeFile.getString(s, def).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");		
+		return MessageUtils.getPrefix() + localeFile.getString(s, def).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");		
 	}
+	
 }

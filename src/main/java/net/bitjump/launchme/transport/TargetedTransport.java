@@ -44,4 +44,5 @@ public abstract class TargetedTransport extends TransportType
 	{
 		return true;
 	}
+	
 }
