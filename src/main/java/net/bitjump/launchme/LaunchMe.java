@@ -187,12 +187,14 @@ public class LaunchMe extends JavaPlugin
 	{
 		getCommand("launchme").setExecutor(new CommandManager());
 		
-		CommandManager.addComand(Arrays.asList("version"), new VersionCommand());
+		CommandManager.addComand(Arrays.asList("info", "i"), new InfoCommand());
+		CommandManager.addComand(Arrays.asList("help"), new HelpCommand());
 	}
 
 	private Boolean setupEconomy()
 	{
 		RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+		
 		if (economyProvider != null)
 		{
 			economy = economyProvider.getProvider();

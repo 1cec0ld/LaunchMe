@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.bitjump.launchme.commands.Subcommand;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,6 +33,10 @@ public class CommandManager implements CommandExecutor
 			{
 				sender.sendMessage(LocaleManager.get("commands.nocommand", "This command does not exist!"));
 			}
+		}
+		else
+		{
+			Bukkit.dispatchCommand(sender, "lm info");
 		}
 		
 		return true;

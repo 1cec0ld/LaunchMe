@@ -13,5 +13,10 @@ public class MessageUtils
 	{
 		return s.replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");
 	}
+	
+	public static String getMessage(String s)
+	{
+		return getPrefix() + s;
+	}
 
 }

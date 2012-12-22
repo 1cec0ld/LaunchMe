@@ -23,7 +23,7 @@ permissions:
             launchme.tcannon.use: true
             launchme.tteleporter.create: true
             launchme.tteleporter.use: true
-            launchme.version: true
+            launchme.info: true
         default: op
     launchme.cannon.create:
         description: Allows you to create [cannon] signs.
@@ -58,6 +58,6 @@ permissions:
     launchme.tteleporter.use:
         description: Allows you to use targeted teleporters.
         default: true
-    launchme.version:
-        description: Allows you to check LaunchMe version.
+    launchme.info:
+        description: Allows you to check LaunchMe information.
         default: true
