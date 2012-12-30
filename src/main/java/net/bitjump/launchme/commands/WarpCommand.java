@@ -38,6 +38,11 @@ public class WarpCommand extends PlayerSubcommand
 			p.teleport(en);
 			p.sendMessage(MessageUtils.getMessage(ChatColor.GREEN + "Teleported to " + args[1]));
 		}
+		else
+		{
+			p.sendMessage(MessageUtils.getMessage(ChatColor.RED + "Please specify a target!"));
+			return;
+		}
 	}
 
 }

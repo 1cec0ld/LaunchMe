@@ -26,6 +26,7 @@ permissions:
             launchme.info: true
             launchme.help: true
             launchme.warp: true
+            launchme.warps: true
         default: op
     launchme.cannon.create:
         description: Allows you to create [cannon] signs.
@@ -68,4 +69,7 @@ permissions:
         default: true
     launchme.warp:
         description: Allows you to warp to LaunchMe targets.
+        default: false
+    launchme.warps:
+        description: Allows you to list LaunchMe targets.
         default: false

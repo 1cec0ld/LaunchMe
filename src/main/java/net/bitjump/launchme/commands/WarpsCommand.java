@@ -13,7 +13,7 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-public class TargetsCommand extends Subcommand
+public class WarpsCommand extends Subcommand
 {
 
 	@Override

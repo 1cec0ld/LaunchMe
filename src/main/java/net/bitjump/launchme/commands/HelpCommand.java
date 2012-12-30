@@ -12,8 +12,8 @@ import org.bukkit.command.CommandSender;
 
 public class HelpCommand extends Subcommand 
 {
-	private List<String> cmds = Arrays.asList("help [page]", "info");
-	private List<String> descs = Arrays.asList("Displays this menu.", "Displays plugin inforation");
+	private List<String> cmds = Arrays.asList("help [page]", "info", "warps [page]", "warp <name>");
+	private List<String> descs = Arrays.asList("Displays this menu.", "Displays plugin inforation.", "Displays list of targets.", "Teleports you to target.");
 	
 	public String getPermission()
 	{

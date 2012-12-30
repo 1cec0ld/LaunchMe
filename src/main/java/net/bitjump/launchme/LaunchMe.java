@@ -189,7 +189,7 @@ public class LaunchMe extends JavaPlugin
 		
 		CommandManager.addComand(Arrays.asList("info", "i"), new InfoCommand());
 		CommandManager.addComand(Arrays.asList("help"), new HelpCommand());
-		CommandManager.addComand(Arrays.asList("targets", "warps"), new TargetsCommand());
+		CommandManager.addComand(Arrays.asList("targets", "warps"), new WarpsCommand());
 	}
 
 	private Boolean setupEconomy()
