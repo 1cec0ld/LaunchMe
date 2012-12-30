@@ -36,6 +36,14 @@ Permissions
  - Allows for targeted teleporter creation.
 * launchme.tteleporter.use
  - Allows for targeted teleporter use.
+* launchme.info
+ - Allows you to check LaunchMe information.
+* launchme.help:
+ - Allows you to check LaunchMe command help.
+* launchme.warp:
+ - Allows you to warp to LaunchMe targets.
+* launchme.warps:
+ - Allows you to list LaunchMe targets.
 
 Developers
 -----------
