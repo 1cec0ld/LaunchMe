@@ -2,6 +2,10 @@ package net.bitjump.launchme.managers;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 import net.bitjump.launchme.LaunchMe;
 
@@ -22,19 +26,19 @@ public class TargetManager
 		save();
 	}
 	
-	public static void add(String s, Location l)
-	{
-		String loc = l.getWorld().getName() + "," +  Double.toString(l.getX()) + "," + Double.toString(l.getY()) + "," + Double.toString(l.getZ());
-		targetFile.set("targets." + s, loc);
+	public static void set(String s, Location l)
+	{		
+		targetFile.set("targets." + s + ".world", l.getWorld().getName());
+		targetFile.set("targets." + s + ".x", l.getX());
+		targetFile.set("targets." + s + ".y", l.getY());
+		targetFile.set("targets." + s + ".z", l.getZ());
 		
 		save();
 	}
 	
 	public static Location get(String s)
-	{
-		String[] ss = targetFile.getString("targets." + s).split(",");
-		
-		return new Location(Bukkit.getWorld(ss[0]), Double.parseDouble(ss[1]), Double.parseDouble(ss[2]), Double.parseDouble(ss[3]));
+	{		
+		return new Location(Bukkit.getWorld(targetFile.getString("targets." + s + ".world")), targetFile.getDouble("targets." + s + ".x"), targetFile.getDouble("targets." + s + ".y"), targetFile.getDouble("targets." + s + ".z"));
 	}
 	
 	public static void remove(String s)
@@ -54,6 +58,22 @@ public class TargetManager
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	public static LinkedHashMap<String, Location> getTargets()
+	{
+		LinkedHashMap<String, Location> targets = new LinkedHashMap<String, Location>();
+		
+		List<String> ss = new ArrayList<String>(targetFile.getConfigurationSection("targets").getKeys(false));
+		
+		Collections.sort(ss);
+		
+		for(String s : ss)
+		{
+			targets.put(s, new Location(Bukkit.getWorld(targetFile.getString("targets." + s + ".world")), targetFile.getDouble("targets." + s + ".x"), targetFile.getDouble("targets." + s + ".y"), targetFile.getDouble("targets." + s + ".z")));
+		}
+		
+		return targets;
 	}
 	
 }

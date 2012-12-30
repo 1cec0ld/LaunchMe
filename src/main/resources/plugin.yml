@@ -24,6 +24,8 @@ permissions:
             launchme.tteleporter.create: true
             launchme.tteleporter.use: true
             launchme.info: true
+            launchme.help: true
+            launchme.warp: true
         default: op
     launchme.cannon.create:
         description: Allows you to create [cannon] signs.
@@ -61,3 +63,9 @@ permissions:
     launchme.info:
         description: Allows you to check LaunchMe information.
         default: true
+    launchme.help:
+        description: Allows you to check LaunchMe command help.
+        default: true
+    launchme.warp:
+        description: Allows you to warp to LaunchMe targets.
+        default: false
