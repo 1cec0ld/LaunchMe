@@ -21,5 +21,5 @@ transports:
     target:
         # Is transport enabled?
         enabled: true
-#Set to false to now show the plugin name on teleport.
+#Set to false to not show the plugin name on teleport.
 name: true
