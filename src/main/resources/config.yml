@@ -1,6 +1,8 @@
 # Specifies the active locale_XX.yml file, stored in plugins/LaunchMe/locale.
 locale: "EN"
-# How far below the cannon block should the sign be?
+# Set to false to not show the plugin name on messages.
+name: true
+# How far below the cannon block should the sign be.
 depth: 1
 transports:
     cannon:
@@ -21,5 +23,3 @@ transports:
     target:
         # Is transport enabled?
         enabled: true
-#Set to false to not show the plugin name on teleport.
-name: true
