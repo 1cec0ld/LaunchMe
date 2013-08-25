@@ -28,7 +28,13 @@ public class LocaleManager
 	
 	public static String get(String s, String def)
 	{
-		return MessageUtils.getPrefix() + localeFile.getString(s, def).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");		
+		if( !(LaunchMe.config.getBoolean("name")) )
+		{
+			return localeFile.getString(s, def).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");
+		}
+		
+		return MessageUtils.getPrefix() + localeFile.getString(s, def).replaceAll("&", "\u00a7").replaceAll("\u00a7\u00a7", "&");
+				
 	}
 	
 }
